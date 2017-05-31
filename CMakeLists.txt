@@ -48,7 +48,7 @@ if(CXXOPTS_USE_UNICODE_HELP)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ICU_CFLAGS} -DCXXOPTS_USE_UNICODE")
 endif()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -Wextra -Wshadow")
 
 add_library(cxxopts INTERFACE)
 target_sources(
