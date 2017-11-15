@@ -12,7 +12,7 @@ matrix:
           packages:
             - g++-5
           sources: &sources
-            - llvm-toolchain-precise-3.8
+            - llvm-toolchain-trusty-5.0
             - ubuntu-toolchain-r-test
     - os: linux
       env: COMPILER=g++-5 UNICODE_OPTIONS=-DCXXOPTS_USE_UNICODE_HELP=Yes
@@ -22,19 +22,19 @@ matrix:
             - g++-5
           sources: *sources
     - os: linux
-      env: COMPILER=clang++-3.8 CXXFLAGS=-stdlib=libc++
+      env: COMPILER=clang++-5.0 CXXFLAGS=-stdlib=libc++
       addons:
         apt:
           packages:
-            - clang-3.8
+            - clang-5.0
             - libc++-dev
           sources: *sources
     - os: linux
-      env: COMPILER=clang++-3.8 CXXFLAGS=-stdlib=libc++ UNICODE_OPTIONS=-DCXXOPTS_USE_UNICODE_HELP=Yes
+      env: COMPILER=clang++-5.0 CXXFLAGS=-stdlib=libc++ UNICODE_OPTIONS=-DCXXOPTS_USE_UNICODE_HELP=Yes
       addons:
         apt:
           packages:
-            - clang-3.8
+            - clang-5.0
             - libc++-dev
           sources: *sources
 script: >
