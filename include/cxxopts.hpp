@@ -1003,7 +1003,7 @@ namespace cxxopts
     {
       ensure_value(details);
       m_value->parse();
-      m_count++;
+      //m_count++;
     }
 
     size_t
