@@ -53,7 +53,7 @@ matrix:
             - libc++-dev
           sources: *sources
     - os: linux
-      env: COMPILER=clang++-3.8 CXXFLAGS=-stdlib=libc++ CMAKE_OPTIONS=-DCXXOPTS_CXX_STANDARD=17
+      env: COMPILER=clang++-5.0 CXXFLAGS=-stdlib=libc++ CMAKE_OPTIONS=-DCXXOPTS_CXX_STANDARD=17
       addons:
         apt:
           packages:
