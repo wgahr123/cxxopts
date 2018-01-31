@@ -53,12 +53,12 @@ matrix:
             - libc++-dev
           sources: *sources
     - os: linux
-      env: COMPILER=clang++-5.0 CXXFLAGS=-stdlib=libc++ CMAKE_OPTIONS=-DCXXOPTS_CXX_STANDARD=17
+      env: COMPILER=clang++-5.0 CMAKE_OPTIONS=-DCXXOPTS_CXX_STANDARD=17
       addons:
         apt:
           packages:
             - clang-5.0
-            - libc++-dev
+            - g++-5
           sources: *sources
 script: >
     cmake -DCXXOPTS_BUILD_TESTS=ON -DCMAKE_CXX_COMPILER=$COMPILER
