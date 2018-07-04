@@ -22,7 +22,7 @@ project(cxxopts)
 
 enable_testing()
 
-file(STRINGS "${CMAKE_SOURCE_DIR}/include/cxxopts.hpp" cxxopts_version_defines
+file(STRINGS "${PROJECT_SOURCE_DIR}/include/cxxopts.hpp" cxxopts_version_defines
      REGEX "#define {CXXOPTS__VERSION_(MAJOR|MINOR|PATCH)")
 foreach(ver ${cxxopts_version_defines})
     if(ver MATCHES "#define {CXXOPTS__VERSION_(MAJOR|MINOR|PATCH) +([^ ]+)$")
