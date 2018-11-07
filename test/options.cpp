@@ -529,3 +529,19 @@ TEST_CASE("Unrecognised options", "[options]") {
     CHECK_THAT(argv[1], Catch::Equals("--unknown"));
   }
 }
+
+TEST_CASE("Invalid option syntax", "[options]") {
+  cxxopts::Options options("invalid_syntax", " - test invalid syntax");
+
+  Argv av({
+    "invalid_syntax",
+    "--a",
+  }); 
+
+  char** argv = av.argv();
+  auto argc = av.argc();
+
+  SECTION("Default behaviour") {
+    CHECK_THROWS_AS(options.parse(argc, argv), cxxopts::option_syntax_exception);
+  }
+}
